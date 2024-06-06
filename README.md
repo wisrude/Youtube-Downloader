@@ -21,7 +21,7 @@ _Easy video downloader (only youtube)_
 - Non-functional web format
 
 <h3 align="left">Made with</h3>
-<a><img src="https://skillicons.dev/icons?i=ts,rust,nodejs,html,css,react&perline=17" width="100%"></a>
+<a><img src="https://skillicons.dev/icons?i=rust,ts,tauri,html,css,react&perline=17" width="100%"></a>
 
 ## 📩
 
