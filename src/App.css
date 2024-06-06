@@ -1,0 +1,169 @@
+.logo.github:hover {
+  filter: drop-shadow(0 0 1em #ff0000);
+  transition-duration: 0.3s;
+}
+.selected-song {
+  background-color: rgba(92, 6, 6, 0.658);
+  border: 4px solid rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.menu-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-container li {
+  margin-bottom: 10px;
+  border: 4px solid #ff0000;
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-container li:hover {
+  background-color: rgba(27, 27, 27, 0.8);
+}
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #000000;
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.logo {
+  width: 100px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.icon-button {
+  background: #000000;
+  border: none;
+  fill: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  text-align: center;
+}
+
+input,
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #000000;
+  background-color: #ffffff;
+  transition: border-color 0.25s;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #396cd8;
+}
+
+button:active {
+  border-color: #396cd8;
+  background-color: #e8e8e8;
+}
+
+input,
+button {
+  outline: none;
+}
+
+#greet-input {
+  margin-right: 5px;
+  background-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #f6f6f6;
+  }
+
+  a:hover {
+    color: #24c8db;
+  }
+
+  input,
+  button {
+    color: #ffffff;
+    background-color: #00000098;
+  }
+
+  button:active {
+    background-color: #0f0f0f69;
+  }
+}

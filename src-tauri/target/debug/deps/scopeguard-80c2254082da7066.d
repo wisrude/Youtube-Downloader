@@ -1,0 +1,5 @@
+C:\Users\Alex\Desktop\Repositories\Youtube-Downloader\src-tauri\target\debug\deps\libscopeguard-80c2254082da7066.rmeta: C:\Users\Alex\.cargo\registry\src\index.crates.io-6f17d22bba15001f\scopeguard-1.2.0\src\lib.rs
+
+C:\Users\Alex\Desktop\Repositories\Youtube-Downloader\src-tauri\target\debug\deps\scopeguard-80c2254082da7066.d: C:\Users\Alex\.cargo\registry\src\index.crates.io-6f17d22bba15001f\scopeguard-1.2.0\src\lib.rs
+
+C:\Users\Alex\.cargo\registry\src\index.crates.io-6f17d22bba15001f\scopeguard-1.2.0\src\lib.rs:

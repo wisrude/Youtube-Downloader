@@ -1,0 +1,30 @@
+{
+  "name": "youtube",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": ">=2.0.0-beta.0",
+    "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": ">=2.0.0-beta.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-modal": "^3.16.3",
+    "@vitejs/plugin-react": "^4.2.1",
+    "internal-ip": "^7.0.0",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0"
+  }
+}
