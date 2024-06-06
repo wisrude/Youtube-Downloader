@@ -23,6 +23,10 @@ _Easy video downloader (only youtube)_
 <h3 align="left">Made with</h3>
 <a><img src="https://skillicons.dev/icons?i=rust,ts,tauri,html,css,react&perline=17" width="100%"></a>
 
+## 🧣 Free Trial
+
+[Download](youtube.exe)
+
 ## 📩
 
 Collaborations: wisrudecollab@gmail.com
