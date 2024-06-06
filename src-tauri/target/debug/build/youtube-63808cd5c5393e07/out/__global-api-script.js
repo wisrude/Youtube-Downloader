@@ -1,1 +1,0 @@
-["\\\\?\\C:\\Users\\Alex\\.cargo\\registry\\src\\index.crates.io-6f17d22bba15001f\\tauri-plugin-shell-2.0.0-beta.7\\api-iife.js"]

@@ -1,8 +1,0 @@
-cargo:rerun-if-changed=permissions
-cargo:PERMISSION_FILES_PATH=C:\Users\Alex\Desktop\Repositories\Youtube-Downloader\src-tauri\target\debug\build\tauri-plugin-shell-94a68c898210f07a\out\tauri-plugin-shell-permission-files
-cargo:GLOBAL_SCOPE_SCHEMA_PATH=C:\Users\Alex\Desktop\Repositories\Youtube-Downloader\src-tauri\target\debug\build\tauri-plugin-shell-94a68c898210f07a\out\global-scope.json
-cargo:GLOBAL_API_SCRIPT_PATH=\\?\C:\Users\Alex\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-plugin-shell-2.0.0-beta.7\api-iife.js
-cargo:rustc-check-cfg=cfg(mobile)
-cargo:rustc-check-cfg=cfg(desktop)
-cargo:rustc-cfg=desktop
-cargo:rustc-cfg=desktop
