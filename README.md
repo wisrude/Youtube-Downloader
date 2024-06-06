@@ -1,6 +1,6 @@
 <div align="center">
 
-![Youtube-Downloader](./src-tauri/icons/logo.png)
+![Youtube-Downloader](./src-tauri/icons/icon.ico)
 
 ## 🎬 Youtube-Downloader
 
