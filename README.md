@@ -23,6 +23,14 @@ _Easy video downloader (only youtube)_
 <h3 align="left">Made with</h3>
 <a><img src="https://skillicons.dev/icons?i=rust,ts,tauri,html,css,react&perline=17" width="100%"></a>
 
+## 🔬 Developing
+
+- If you want to running code execute next commands
+
+> `npm run build` - Build all app
+> `npm run tauri dev` - Run this app in local
+> `npm run build --release` - Create your folder release with executable and setups
+
 ## 🧣 Free Trial
 
 💾 [Download](https://github.com/wisrude/Youtube-Downloader/releases/download/v1.0.0/youtube.exe)
