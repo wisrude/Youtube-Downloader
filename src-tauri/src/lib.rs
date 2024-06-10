@@ -1,5 +1,4 @@
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 use tauri::command;
 use reqwest::Client;
 use rusty_ytdl::Video;
@@ -26,7 +25,7 @@ struct Snippet {
 #[derive(Serialize, Deserialize, Clone)]
 struct Id {
     #[serde(rename = "videoId")]
-    videoId: String,
+    video_id: String,
 }
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -52,14 +51,14 @@ struct MenuResponse {
 struct MenuItem {
     title: String,
     artist: String,
-    videoId: String,
+    video_id: String, 
     thumbnails: Thumbnails,
 }
 
 #[command]
 async fn get_menu(query: String) -> Result<MenuResponse, String> {
     let client = Client::new();
-    let api_key = "YOUR_API_KEY"; //API KEY
+    let api_key = "YOUR_API_KEY";
     let url = format!(
         "https://www.googleapis.com/youtube/v3/search?key={}&part=snippet&type=video&maxResults=5&q={}",
         api_key, query
@@ -68,8 +67,8 @@ async fn get_menu(query: String) -> Result<MenuResponse, String> {
     let response = match client.get(&url).send().await {
         Ok(response) => response,
         Err(err) => {
-            eprintln!("Error sending request: {}", err);
-            return Err(format!("Failed to send request to YouTube API: {}", err));
+            eprintln!("Error request: {}", err);
+            return Err(format!("API error: {}", err));
         }
     };
 
@@ -85,7 +84,7 @@ async fn get_menu(query: String) -> Result<MenuResponse, String> {
         Ok(data) => data,
         Err(err) => {
             eprintln!("Error parsing YouTube API response: {}", err);
-            return Err(format!("Failed to parse YouTube API response: {}", err));
+            return Err(format!("Failed to parse API response: {}", err));
         }
     };
 
@@ -93,7 +92,7 @@ async fn get_menu(query: String) -> Result<MenuResponse, String> {
     for item in &youtube_response.items {
         println!("  - Título: {}", item.snippet.title);
         println!("    Artista: {}", item.snippet.channel_title);
-        println!("    VideoId: {}", item.id.videoId);
+        println!("    Video ID: {}", item.id.video_id);
 
     }
 
@@ -101,7 +100,7 @@ async fn get_menu(query: String) -> Result<MenuResponse, String> {
         title: item.snippet.title.clone(),
         artist: item.snippet.channel_title.clone(),
         thumbnails: item.snippet.thumbnails.clone(),
-        videoId: item.id.videoId.clone(),
+        video_id: item.id.video_id.clone(),
     }).collect();
 
     Ok(MenuResponse { items: menu_items })
@@ -115,7 +114,7 @@ async fn download(url: String, title: String) -> Result<String, String> {
 
     let video = match Video::new(&url) {
         Ok(video) => video,
-        Err(err) => return Err(format!("Error al crear el objeto Video: {:?}", err)),
+        Err(err) => return Err(format!("Object Error: {:?}", err)),
     };
 
     let mut download_dir = dirs::download_dir().ok_or_else(|| "No se pudo obtener la carpeta de descargas del usuario".to_string())?;
@@ -128,7 +127,7 @@ async fn download(url: String, title: String) -> Result<String, String> {
     video
         .download(&file_path)
         .await
-        .map_err(|e| format!("Error al descargar el video: {:?}", e))?;
+        .map_err(|e| format!("Download Error: {:?}", e))?;
 
     Ok(file_path.to_string_lossy().into_owned())
 }

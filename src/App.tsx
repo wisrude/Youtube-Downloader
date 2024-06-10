@@ -17,31 +17,32 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.documentElement.requestFullscreen();
+    document.documentElement
+      .requestFullscreen()
+      .catch((err) => console.error(err));
   }, []);
 
   async function fetchMenu(query: string) {
     setLoading(true);
     setError(null);
     try {
-      console.log("Fetching menu for query:", query);
       const response: any = await invoke("get_menu", { query });
-      console.log("Response from API:", response);
       if (response && response.items && Array.isArray(response.items)) {
         const items = response.items.map((item: any) => ({
           title: item.title,
-          artist: item.channelTitle,
-          videoId: item.videoId,
+          artist: item.artist,
+          videoId: item.video_id,
         }));
         setMenuItems(items);
         setMenuExpanded(true);
       } else {
-        console.error("Unexpected response format:", response);
         setError("Unexpected response format");
       }
     } catch (error) {
-      console.error("Error fetching menu:", error);
-      setError("Error fetching menu: " + (error || "Unknown error"));
+      setError(
+        "Error fetching menu: " +
+          (error instanceof Error ? error.message : "Unknown error")
+      );
     } finally {
       setLoading(false);
     }
@@ -52,7 +53,7 @@ function App() {
       document.getElementById("greet-input") as HTMLInputElement
     ).value.trim();
     if (!input) {
-      alert("Por favor, escribe el nombre de una canción.");
+      alert("Please select a song first");
       return;
     }
     fetchMenu(input);
@@ -64,20 +65,19 @@ function App() {
 
   async function handleDownload() {
     if (selectedSong) {
-      console.log("Descargando:", selectedSong.title);
       try {
         const url = `https://www.youtube.com/watch?v=${selectedSong.videoId}`;
         const title = selectedSong.title;
-        alert("Descargando archivo...");
-        const filePath = await invoke("download", { url, title });
-        console.log("Archivo descargado:", filePath);
-        alert("La descarga se ha completado.");
+        alert("Downloading...");
+        await invoke("download", { url, title });
+        alert("Completed Download");
       } catch (error) {
-        alert(`Error: ${error || "Unknown error"}`);
-        console.error("Error al descargar:", error);
+        alert(
+          `Error: ${error instanceof Error ? error.message : "Unknown error"}`
+        );
       }
     } else {
-      alert("Por favor, selecciona una canción primero.");
+      alert("Please select a song first");
     }
   }
 
@@ -89,8 +89,14 @@ function App() {
           <img src={githubLogo} className="logo github" alt="Github logo" />
         </a>
       </div>
-      <form className="row">
-        <input id="greet-input" placeholder="Canción" />
+      <form
+        className="row"
+        onSubmit={(e) => {
+          e.preventDefault();
+          toggleMenu();
+        }}
+      >
+        <input id="greet-input" placeholder="Song" />
         <button type="button" className="icon-button" onClick={toggleMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +112,7 @@ function App() {
           </svg>
         </button>
       </form>
-      {loading && <p>Cargando...</p>}
+      {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       {selectedSong && (
         <div className="selected-song">
@@ -128,8 +134,8 @@ function App() {
         </div>
       )}
       <div id="downloadMessage" style={{ display: "none" }}>
-        Descargando archivo...
-      </div>{" "}
+        Downloading...
+      </div>
     </div>
   );
 }
