@@ -26,6 +26,7 @@ _Easy video downloader (only youtube)_
 ## 🧣 Free Trial
 
 💾 [Download](https://github.com/wisrude/Youtube-Downloader/releases/download/v1.0.0/youtube.exe)
+🍄 [Setup](https://github.com/wisrude/Youtube-Downloader/releases/download/v1.0.1/Youtube-Downloader_1.0.0_x64-setup.exe)
 
 ## 📩
 
