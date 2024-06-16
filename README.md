@@ -18,18 +18,17 @@ _Easy video downloader (only youtube)_
 
 ## ⚠️ Warning
 
-- Non-functional web format
+- Non-functional on web browser (**TAURI** is required)
 
 <h3 align="left">Made with</h3>
-<a><img src="https://skillicons.dev/icons?i=rust,ts,tauri,html,css,react&perline=17" width="100%"></a>
+<a><img src="https://skillicons.dev/icons?i=rust,tauri,react,ts,html,css&perline=17" width="100%"></a>
 
 ## 🔬 Developing
 
 > If you want to running code execute next commands
 
-- `npm run build` - Build all app
+- `npm run tauri build` - Build all app
 - `npm run tauri dev` - Run this app in local
-- `npm run build --release` - Create your folder release with executable and setups
 
 ## 🧣 Free Trial
 
